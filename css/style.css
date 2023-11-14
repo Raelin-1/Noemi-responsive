@@ -146,10 +146,6 @@ ul {
 }
 
 .burger {
-  display: none;
-}
-
-.burger {
   position: relative;
   display: inline-block;
   border: none;
@@ -161,7 +157,7 @@ ul {
 .burger-line {
   position: absolute;
   right: 0;
-  top: 45%;
+  top: center;
   width: 100%;
   height: 3px;
   background-color: #fff;
@@ -181,6 +177,10 @@ ul {
 .burger::after {
   top: auto;
   bottom: 0;
+}
+
+.burger {
+  display: none;
 }
 
 /*trend*/
@@ -208,6 +208,7 @@ ul {
 .trend-item {
   width: 25%;
   min-height: 320px;
+  margin-right: 3px;
   padding: 14px 19px;
   position: relative;
   background: no-repeat center;
@@ -216,8 +217,8 @@ ul {
   align-items: flex-end;
 }
 
-.trend-item:not(:last-child) {
-  margin-right: 2px;
+.trend-item-last {
+  margin-right: 0;
 }
 
 .trend-item::before {
@@ -232,19 +233,19 @@ ul {
   z-index: -1;
 }
 
-.trend-item:nth-child(1) {
+.trend-item-1 {
   background-image: url(../img/trend1.jpg);
 }
 
-.trend-item:nth-child(2) {
+.trend-item-2 {
   background-image: url(../img/trend2.jpg);
 }
 
-.trend-item:nth-child(3) {
+.trend-item-3 {
   background-image: url(../img/trend3.jpg);
 }
 
-.trend-item:nth-child(4) {
+.trend-item-4 {
   background-image: url(../img/trend4.jpg);
 }
 
@@ -526,7 +527,7 @@ ul {
 /* shop */
 
 .shop {
-  margin-bottom: 75px;
+  margin-bottom: 80px;
 }
 
 .shop-wrapper {
@@ -535,13 +536,13 @@ ul {
 }
 
 .shop-cards {
-  width: 26.5%;
+  width: 26%;
   flex-direction: column;
 }
 
 .shop-content {
   margin-top: -10px;
-  padding: 36px 0 23px 11px;
+  padding: 27px 0 23px 11px;
   outline: 3px solid #b59f5b;
   background-color: rgba(0, 0, 0, 0);
   outline-offset: 20px;
@@ -549,7 +550,7 @@ ul {
 }
 
 .shop-title {
-  margin-bottom: 15px;
+  margin-bottom: 3px;
   font: 700 20px/24px OpenSans;
   text-transform: uppercase;
   color: #000;
@@ -623,19 +624,16 @@ ul {
 .dribble {
   background: url("https://netology-code.github.io/html-2-diploma/sources/images/social/001-dribbble.svg")
     no-repeat center;
-  background-size: 20px;
 }
 
 .pinterest {
   background: url("https://netology-code.github.io/html-2-diploma/sources/images/social/002-pinterest.svg")
     no-repeat center;
-  background-size: 20px;
 }
 
 .tumblr {
   background: url("https://netology-code.github.io/html-2-diploma/sources/images/social/003-tumblr.svg")
     no-repeat center;
-  background-size: 20px;
 }
 
 .copyright {
@@ -799,6 +797,10 @@ ul {
     width: 158px;
   }
 
+  .banner-title {
+    font: 700 40px/55px OpenSans;
+  }
+
   .nav {
     display: none;
   }
@@ -819,18 +821,15 @@ ul {
   }
 
   .trend-item {
-    width: 49.5%;
+    width: calc(50% - 3px);
     min-height: 247px;
-    margin-bottom: 0.4%;
+    margin-bottom: 3px;
     padding: 11px 20px;
   }
 
-  .trend-item:not(:last-child) {
+  .trend-item-2,
+  .trend-item-4 {
     margin-right: 0;
-  }
-
-  .trend-item:nth-child(odd) {
-    margin-right: 0.4%;
   }
 
   .trend-content {
@@ -991,19 +990,16 @@ ul {
     flex-wrap: wrap;
   }
 
-  .trend-item:nth-child(2n + 1) {
-    margin-right: 0;
-  }
-
   .trend-item {
     width: 100%;
     margin: 0;
+    margin-bottom: 5px;
     min-height: 230px;
     padding: 14px 19px;
   }
 
-  .trend-item:not(:last-child) {
-    margin-bottom: 5px;
+  .trend-item-last {
+    margin-bottom: 0;
   }
 
   .trend-content {
@@ -1114,10 +1110,11 @@ ul {
 
   .shop-cards {
     width: 100%;
+    margin-top: 40px;
     padding: 0 17px;
   }
 
-  .shop-cards:nth-child(n + 2) {
-    margin-top: 40px;
+  .shop-cards-1 {
+    margin-top: 0;
   }
 }
